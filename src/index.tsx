@@ -1,9 +1,13 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import {BrowserRouter as Router} from "react-router-dom";
 
-const App: React.FC = () => {
-    return <div className="welcome">Hello world!</div>;
-};
+import App from "./components/App";
 
 const root = document.getElementById("root");
-ReactDOM.render(<App />, root);
+ReactDOM.render(
+    <Router>
+        <App />
+    </Router>,
+    root,
+);
