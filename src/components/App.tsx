@@ -5,7 +5,7 @@ import Home from "./Home";
 const App: React.FC = () => {
     return (
         <div className="bg-blue-100">
-            <div className="px-4 h-screen flex flex-col justify-center">
+            <div className="px-4 h-screen flex justify-center items-center">
                 <Home />
             </div>
         </div>

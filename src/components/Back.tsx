@@ -1,12 +1,12 @@
 import * as React from "react";
 
-interface CardProps {
+interface BackProps {
     onClose(): void;
 
     children: React.ReactNode;
 }
 
-const Card: React.FC<CardProps> = (props) => {
+const Back: React.FC<BackProps> = (props) => {
     return (
         <div className="relative card mx-auto max-w-md py-4">
             <div className="absolute p-4 top-0 right-0 z-10">
@@ -29,4 +29,4 @@ const Card: React.FC<CardProps> = (props) => {
     );
 };
 
-export default Card;
+export default Back;
