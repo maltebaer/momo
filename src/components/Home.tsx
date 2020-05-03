@@ -29,7 +29,20 @@ const Home: React.FC = () => {
     const renderBack = (): JSX.Element => {
         switch (back) {
             case "specs":
-                return <div>Specs</div>;
+                return (
+                    <div className="p-4">
+                        <h3 className="text-lg">Name</h3>
+                        <p>Hugo Lovis Bär</p>
+                        <h3 className="text-lg">Geburtsdatum</h3>
+                        <p>04. Juni 2020</p>
+                        <h3 className="text-lg">Uhrzeit</h3>
+                        <p>17:24 Uhr</p>
+                        <h3 className="text-lg">Größe</h3>
+                        <p>53 cm</p>
+                        <h3 className="text-lg">Gewicht</h3>
+                        <p>4325 g</p>
+                    </div>
+                );
             case "parents":
                 return <img src={parentsUrl} alt="Steffi und Malte" />;
             case "time":

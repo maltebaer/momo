@@ -6,7 +6,7 @@
     "scripts": {
         "start": "parcel src/index.html",
         "build": "parcel build --public-url . src/index.html",
-        "clean": "rimraf dist/index.html dist/src.*.css dist/src.*.js dist/src.*.map",
+        "clean": "rm -rf dist",
         "predeploy": "yarn run clean && yarn run build",
         "deploy": "gh-pages -d dist"
     },
@@ -33,7 +33,6 @@
         "postcss-import": "^12.0.1",
         "postcss-preset-env": "^6.7.0",
         "prettier": "^2.0.2",
-        "rimraf": "^3.0.2",
         "stylelint": "^13.3.0",
         "tailwindcss": "^1.2.0",
         "typescript": "^3.8.3"

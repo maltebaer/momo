@@ -8,7 +8,7 @@ interface BackProps {
 
 const Back: React.FC<BackProps> = (props) => {
     return (
-        <div className="relative card mx-auto max-w-md py-4">
+        <div className="relative card border mx-auto max-w-md">
             <div className="absolute p-4 top-0 right-0 z-10">
                 <button className="text-white" onClick={props.onClose}>
                     <svg
@@ -24,7 +24,7 @@ const Back: React.FC<BackProps> = (props) => {
                     </svg>
                 </button>
             </div>
-            <div>{props.children}</div>
+            <div className="rounded-sm overflow-hidden">{props.children}</div>
         </div>
     );
 };

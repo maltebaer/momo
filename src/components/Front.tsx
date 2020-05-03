@@ -71,8 +71,10 @@ export default Front;
 
 const Name: React.FC = () => {
     return (
-        <div className="card py-2">
-            <h2 className="text-xl text-blue-800 font-bold">Hugo Rakete Bär</h2>
+        <div className="card bg-blue-200 p-2">
+            <h2 className="text-shadow text-xl text-white font-bold">
+                Hugo Rakete Bär
+            </h2>
             <div className="text-gray-800 text-right font-semibold">
                 4. Juni 2020
             </div>
