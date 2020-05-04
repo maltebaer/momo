@@ -25,7 +25,7 @@
 .card {
     @apply inline-block shadow-xl;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-    border: solid 5px #2c5282;
+    border: solid 5px #285e61;
 }
 
 .c {
