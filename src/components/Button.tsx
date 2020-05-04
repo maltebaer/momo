@@ -2,7 +2,7 @@ import * as React from "react";
 
 import specsUrl from "../assets/specs.svg";
 import parentsUrl from "../assets/parents.svg";
-import timeUrl from "../assets/time.svg";
+import timeUrl from "../assets/time-2.svg";
 
 import {BackContent} from "./Home";
 

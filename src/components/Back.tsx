@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import closeUrl from "../assets/close.svg";
+
 interface BackProps {
     onClose(): void;
 
@@ -11,17 +13,7 @@ const Back: React.FC<BackProps> = (props) => {
         <div className="relative card border mx-auto max-w-md">
             <div className="absolute p-4 top-0 right-0 z-10">
                 <button className="text-white" onClick={props.onClose}>
-                    <svg
-                        fill="none"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        className="w-5 h-5"
-                    >
-                        <path d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
+                    <img className="w-5 h-5" src={closeUrl} />
                 </button>
             </div>
             <div className="rounded-sm overflow-hidden">{props.children}</div>
