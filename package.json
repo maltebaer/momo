@@ -5,10 +5,11 @@
     "license": "MIT",
     "scripts": {
         "start": "parcel src/index.html",
-        "build": "parcel build --public-url . src/index.html",
-        "clean": "rm -rf dist",
-        "predeploy": "yarn run clean && yarn run build",
-        "deploy": "gh-pages -d dist"
+        "build": "parcel build src/index.html",
+        "clean": "rimraf dist",
+        "gh-build": "parcel build --public-url . src/index.html",
+        "gh-predeploy": "yarn run clean && yarn run gh-build",
+        "gh-deploy": "gh-pages -d dist"
     },
     "dependencies": {
         "react": "^16.13.1",
