@@ -1,9 +1,5 @@
 import * as React from "react";
 
-import specsUrl from "../assets/specs.svg";
-import parentsUrl from "../assets/parents.svg";
-import timeUrl from "../assets/time-2.svg";
-
 import {BackContent} from "./Home";
 
 interface ButtonProps {
@@ -15,13 +11,13 @@ const Button: React.FC<ButtonProps> = (props) => {
     const renderIcon = (): JSX.Element => {
         switch (props.id) {
             case "specs":
-                return <img className="icon" src={specsUrl} alt="Specs" />;
+                return <div className="icon card" />;
 
             case "parents":
-                return <img className="icon" src={parentsUrl} alt="Parents" />;
+                return <div className="icon card triangle" />;
 
             case "time":
-                return <img className="icon" src={timeUrl} alt="Time" />;
+                return <div className="icon card pentagon" />;
 
             default:
                 return null;
