@@ -10,7 +10,7 @@ import time from "../assets/time.jpg";
 
 const App: React.FC = () => {
     const audio = React.createRef<HTMLAudioElement>();
-    const [showStorch, setShowStorch] = React.useState<boolean>(false);
+    const [showStorch, setShowStorch] = React.useState<boolean>(true);
 
     React.useEffect(() => {
         const vh = window.innerHeight * 0.01;
@@ -20,11 +20,11 @@ const App: React.FC = () => {
         const imgList = [momo, parents, time];
         imgList.forEach((image) => (new Image().src = image));
     }, []);
-    // React.useEffect(() => {
-    //     setTimeout(() => {
-    //         setShowStorch(false);
-    //     }, 10000);
-    // }, []);
+    React.useEffect(() => {
+        setTimeout(() => {
+            setShowStorch(false);
+        }, 10000);
+    }, []);
     React.useEffect(() => {
         setTimeout(() => {
             audio.current.pause();
@@ -32,8 +32,8 @@ const App: React.FC = () => {
     }, [audio]);
 
     return (
-        <div className="full-height bg-blue-100">
-            <div className="px-12 h-full flex justify-center items-center">
+        <div className="full-height bg-blue-100 overflow-hidden">
+            <div className="px-6 h-full flex justify-center items-center">
                 {showStorch ? (
                     <Storch />
                 ) : (

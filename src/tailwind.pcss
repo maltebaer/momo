@@ -3,8 +3,6 @@
 @tailwind components;
 /* purgecss end ignore */
 
-@tailwind utilities;
-
 /* HEADINGS */
 h2 {
     @apply text-shadow text-xl text-white font-bold;
@@ -21,9 +19,14 @@ h3 {
 
 /* ICONS */
 .icon {
-    @apply h-16 w-16;
+    @apply h-10 w-10;
     transform: scale(1);
     animation: pulse 2s infinite;
+}
+@screen sm {
+    .icon {
+        @apply h-16 w-16
+    }
 }
 @keyframes pulse {
     0% {
@@ -39,14 +42,14 @@ h3 {
 .triangle {
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
-.circle {
-    clip-path: circle(50% at 50% 50%);
-}
 .pentagon {
     clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
 }
 .rhombus {
    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.close {
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
 }
 
 /* HELPERS */
@@ -55,10 +58,12 @@ h3 {
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
     border: solid 5px #285e61;
 }
-.c {
+.animated {
     will-change: transform, opacity;
 }
 .full-height {
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
 }
+
+@tailwind utilities;

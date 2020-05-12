@@ -2,7 +2,7 @@ import * as React from "react";
 
 const Specs: React.FC = () => {
     return (
-        <div className="p-6 bg-teal-600 w-64">
+        <div className="p-6 w-64">
             <h3>Name</h3>
             <p className="sub-text">Hugo Lovis Bär</p>
             <h3 className="pt-2">Geburtsdatum</h3>

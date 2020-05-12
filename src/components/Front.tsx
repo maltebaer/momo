@@ -32,7 +32,10 @@ const Front: React.FC<FrontProps> = (props) => {
                 set({xy: calc(x, y)})
             }
         >
-            <div className="relative flex justify-between">
+            <div
+                style={{top: "2rem"}}
+                className="relative flex justify-between"
+            >
                 <a.div
                     style={{
                         transform: position.xy.interpolate(translate),
@@ -48,12 +51,13 @@ const Front: React.FC<FrontProps> = (props) => {
                     <Button id="parents" handleTurn={props.handleTurn} />
                 </a.div>
             </div>
-            <img
-                className="object-cover shadow-md"
-                src={props.momo}
-                alt="Momo"
-            />
-            <div className="flex justify-between items-end">
+            <div className="px-4">
+                <img className="card" src={props.momo} alt="Momo" />
+            </div>
+            <div
+                style={{top: "-3rem"}}
+                className="relative flex justify-between items-end"
+            >
                 <a.div style={{transform: position.xy.interpolate(translate)}}>
                     <Button id="time" handleTurn={props.handleTurn} />
                 </a.div>

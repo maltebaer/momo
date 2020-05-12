@@ -48,7 +48,7 @@ const Home: React.FC<HomeProps> = (props) => {
         <div className="w-full h-full flex justify-center items-center">
             {!back && (
                 <a.div
-                    className="c max-w-lg"
+                    className="animated max-w-lg"
                     style={{
                         opacity: opacity.interpolate((o: number) => 1 - o),
                         transform,
@@ -59,7 +59,7 @@ const Home: React.FC<HomeProps> = (props) => {
             )}
             {back && (
                 <a.div
-                    className="c max-w-lg"
+                    className="animated max-w-lg"
                     style={{
                         opacity,
                         transform: transform.interpolate(
