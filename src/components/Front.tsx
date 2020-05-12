@@ -52,7 +52,13 @@ const Front: React.FC<FrontProps> = (props) => {
                 </a.div>
             </div>
             <div className="px-4">
-                <img className="card" src={props.momo} alt="Momo" />
+                <div className="card">
+                    <img
+                        className="rounded-sm overflow-hidden"
+                        src={props.momo}
+                        alt="Momo"
+                    />
+                </div>
             </div>
             <div
                 style={{top: "-3rem"}}
