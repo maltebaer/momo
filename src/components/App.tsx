@@ -10,17 +10,17 @@ import time from "../assets/time.jpg";
 
 const App: React.FC = () => {
     const audio = React.createRef<HTMLAudioElement>();
-    const [showStorch, setShowStorch] = React.useState<boolean>(true);
+    const [showStorch, setShowStorch] = React.useState<boolean>(false);
 
     React.useEffect(() => {
         const imgList = [momo, parents, time];
         imgList.forEach((image) => (new Image().src = image));
     }, []);
-    React.useEffect(() => {
-        setTimeout(() => {
-            setShowStorch(false);
-        }, 10000);
-    }, []);
+    // React.useEffect(() => {
+    //     setTimeout(() => {
+    //         setShowStorch(false);
+    //     }, 10000);
+    // }, []);
     React.useEffect(() => {
         setTimeout(() => {
             audio.current.pause();

@@ -10,4 +10,7 @@ module.exports = {
         "plugin:react-hooks/recommended",
         "prettier/@typescript-eslint",
     ],
+    rules: {
+        "react/prop-types": "off",
+    },
 };

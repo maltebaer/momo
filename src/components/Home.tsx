@@ -3,6 +3,7 @@ import {useSpring, animated as a} from "react-spring";
 
 import Back from "./Back";
 import Front from "./Front";
+import Specs from "./Specs";
 
 interface HomeProps {
     momo: string;
@@ -32,20 +33,7 @@ const Home: React.FC<HomeProps> = (props) => {
     const renderBack = (): JSX.Element => {
         switch (back) {
             case "specs":
-                return (
-                    <div className="p-6 bg-teal-600 w-64">
-                        <h3>Name</h3>
-                        <p className="sub-text">Hugo Lovis Bär</p>
-                        <h3 className="pt-2">Geburtsdatum</h3>
-                        <p className="sub-text">04. Juni 2020</p>
-                        <h3 className="pt-2">Uhrzeit</h3>
-                        <p className="sub-text">17:24 Uhr</p>
-                        <h3 className="pt-2">Größe</h3>
-                        <p className="sub-text">53 cm</p>
-                        <h3 className="pt-2">Gewicht</h3>
-                        <p className="sub-text">4325 g</p>
-                    </div>
-                );
+                return <Specs />;
             case "parents":
                 return <img src={props.parents} alt="Steffi und Malte" />;
             case "time":
@@ -58,26 +46,30 @@ const Home: React.FC<HomeProps> = (props) => {
 
     return (
         <div className="w-full flex justify-center items-center">
-            <a.div
-                className="c absolute"
-                style={{
-                    opacity: opacity.interpolate((o: number) => 1 - o),
-                    transform,
-                }}
-            >
-                <Front handleTurn={handleTurn} momo={props.momo} />
-            </a.div>
-            <a.div
-                className="c absolute"
-                style={{
-                    opacity,
-                    transform: transform.interpolate(
-                        (t) => `${t} rotateX(180deg)`,
-                    ),
-                }}
-            >
-                <Back onClose={handleClose}>{renderBack()}</Back>
-            </a.div>
+            {!back && (
+                <a.div
+                    className="c absolute"
+                    style={{
+                        opacity: opacity.interpolate((o: number) => 1 - o),
+                        transform,
+                    }}
+                >
+                    <Front handleTurn={handleTurn} momo={props.momo} />
+                </a.div>
+            )}
+            {back && (
+                <a.div
+                    className="c absolute"
+                    style={{
+                        opacity,
+                        transform: transform.interpolate(
+                            (t) => `${t} rotateX(180deg)`,
+                        ),
+                    }}
+                >
+                    <Back onClose={handleClose}>{renderBack()}</Back>
+                </a.div>
+            )}
         </div>
     );
 };
