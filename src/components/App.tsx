@@ -32,7 +32,7 @@ const App: React.FC = () => {
     }, [audio]);
 
     return (
-        <div className="full-height bg-blue-100 overflow-hidden">
+        <div className="full-height bg-blue-100">
             <div className="px-12 h-full flex justify-center items-center">
                 {showStorch ? (
                     <Storch />

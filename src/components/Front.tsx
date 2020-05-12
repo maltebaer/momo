@@ -48,14 +48,12 @@ const Front: React.FC<FrontProps> = (props) => {
                     <Button id="parents" handleTurn={props.handleTurn} />
                 </a.div>
             </div>
-            <div className="px-6">
-                <img
-                    className="-mt-8 object-cover shadow-md"
-                    src={props.momo}
-                    alt="Momo"
-                />
-            </div>
-            <div className="-mt-10 flex justify-between items-end">
+            <img
+                className="object-cover shadow-md"
+                src={props.momo}
+                alt="Momo"
+            />
+            <div className="flex justify-between items-end">
                 <a.div style={{transform: position.xy.interpolate(translate)}}>
                     <Button id="time" handleTurn={props.handleTurn} />
                 </a.div>
