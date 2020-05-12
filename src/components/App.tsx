@@ -13,6 +13,10 @@ const App: React.FC = () => {
     const [showStorch, setShowStorch] = React.useState<boolean>(false);
 
     React.useEffect(() => {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+    }, []);
+    React.useEffect(() => {
         const imgList = [momo, parents, time];
         imgList.forEach((image) => (new Image().src = image));
     }, []);
@@ -28,8 +32,8 @@ const App: React.FC = () => {
     }, [audio]);
 
     return (
-        <div className="bg-blue-100 overflow-hidden">
-            <div className="px-12 h-screen flex justify-center items-center">
+        <div className="full-height bg-blue-100 overflow-hidden">
+            <div className="px-12 h-full flex justify-center items-center">
                 {showStorch ? (
                     <Storch />
                 ) : (
