@@ -29,7 +29,7 @@ const App: React.FC = () => {
 
     return (
         <div className="bg-blue-100 overflow-hidden">
-            <div className="px-4 h-screen flex justify-center items-center">
+            <div className="px-12 h-screen flex justify-center items-center">
                 {showStorch ? (
                     <Storch />
                 ) : (
