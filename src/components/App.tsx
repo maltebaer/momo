@@ -33,11 +33,13 @@ const App: React.FC = () => {
 
     return (
         <div className="full-height bg-blue-100 overflow-hidden">
-            <div className="px-6 h-full flex justify-center items-center">
+            <div className="px-6 h-full">
                 {showStorch ? (
                     <Storch />
                 ) : (
-                    <Home momo={momo} parents={parents} time={time} />
+                    <div className="h-full flex justify-center items-center">
+                        <Home momo={momo} parents={parents} time={time} />
+                    </div>
                 )}
             </div>
             <audio ref={audio} src={squeaking} hidden autoPlay />
