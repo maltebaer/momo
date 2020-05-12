@@ -5,9 +5,8 @@ import {BackContent} from "./Home";
 
 import Button from "./Button";
 
-import momoUrl from "../assets/hugo-steffi.jpg";
-
 interface FrontProps {
+    momo: string;
     handleTurn(content: BackContent): void;
 }
 
@@ -53,7 +52,7 @@ const Front: React.FC<FrontProps> = (props) => {
             <div className="px-6">
                 <img
                     className="-mt-8 object-cover shadow-md"
-                    src={momoUrl}
+                    src={props.momo}
                     alt="Momo"
                 />
             </div>

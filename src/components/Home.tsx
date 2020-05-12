@@ -4,12 +4,15 @@ import {useSpring, animated as a} from "react-spring";
 import Back from "./Back";
 import Front from "./Front";
 
-import parentsUrl from "../assets/hugo-steffi-2.jpg";
-import timeUrl from "../assets/time.jpg";
+interface HomeProps {
+    momo: string;
+    parents: string;
+    time: string;
+}
 
 export type BackContent = "parents" | "specs" | "time" | null;
 
-const Home: React.FC = () => {
+const Home: React.FC<HomeProps> = (props) => {
     const [back, setBack] = React.useState<BackContent>(null);
 
     const {transform, opacity} = useSpring({
@@ -44,9 +47,9 @@ const Home: React.FC = () => {
                     </div>
                 );
             case "parents":
-                return <img src={parentsUrl} alt="Steffi und Malte" />;
+                return <img src={props.parents} alt="Steffi und Malte" />;
             case "time":
-                return <img src={timeUrl} alt="Pow" />;
+                return <img src={props.time} alt="Pow" />;
 
             default:
                 return null;
@@ -62,7 +65,7 @@ const Home: React.FC = () => {
                     transform,
                 }}
             >
-                <Front handleTurn={handleTurn} />
+                <Front handleTurn={handleTurn} momo={props.momo} />
             </a.div>
             <a.div
                 className="c absolute"

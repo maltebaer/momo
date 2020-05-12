@@ -2,8 +2,8 @@ import * as React from "react";
 
 import {useSpring, animated as a} from "react-spring";
 
-import cloudsUrl from "../assets/clouds.svg";
-import storchUrl from "../assets/storch.gif";
+import clouds from "../assets/clouds.svg";
+import storch from "../assets/storch.gif";
 
 const Storch: React.FC = () => {
     const {opacity: opacityClouds} = useSpring({
@@ -37,7 +37,7 @@ const Storch: React.FC = () => {
                     ),
                 }}
             >
-                <img className="h-32 w-32" src={cloudsUrl} alt="Wolken" />
+                <img className="h-32 w-32" src={clouds} alt="Wolken" />
             </a.div>
             <a.div
                 style={{
@@ -47,7 +47,7 @@ const Storch: React.FC = () => {
                     ),
                 }}
             >
-                <img className="h-20 w-20" src={cloudsUrl} alt="Wolken" />
+                <img className="h-20 w-20" src={clouds} alt="Wolken" />
             </a.div>
             <a.div
                 style={{
@@ -57,7 +57,7 @@ const Storch: React.FC = () => {
                     ),
                 }}
             >
-                <img className="h-48 w-48" src={cloudsUrl} alt="Wolken" />
+                <img className="h-48 w-48" src={clouds} alt="Wolken" />
             </a.div>
             <a.div
                 style={{
@@ -67,7 +67,7 @@ const Storch: React.FC = () => {
                     ),
                 }}
             >
-                <img className="h-64 w-64" src={cloudsUrl} alt="Wolken" />
+                <img className="h-64 w-64" src={clouds} alt="Wolken" />
             </a.div>
             <a.div
                 style={{
@@ -83,7 +83,7 @@ const Storch: React.FC = () => {
                 >
                     <img
                         style={{minWidth: "40vh"}}
-                        src={storchUrl}
+                        src={storch}
                         alt="Storch Hugo"
                     />
                 </a.div>
