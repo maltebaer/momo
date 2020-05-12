@@ -28,7 +28,6 @@ const Front: React.FC<FrontProps> = (props) => {
 
     return (
         <div
-            className="mx-auto max-w-lg"
             onMouseMove={({clientX: x, clientY: y}): void =>
                 set({xy: calc(x, y)})
             }
