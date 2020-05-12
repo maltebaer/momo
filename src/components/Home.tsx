@@ -51,7 +51,7 @@ const Home: React.FC<HomeProps> = (props) => {
                     className="c absolute"
                     style={{
                         opacity: opacity.interpolate((o: number) => 1 - o),
-                        transform,
+                        // transform,
                     }}
                 >
                     <Front handleTurn={handleTurn} momo={props.momo} />
@@ -62,9 +62,9 @@ const Home: React.FC<HomeProps> = (props) => {
                     className="c absolute"
                     style={{
                         opacity,
-                        transform: transform.interpolate(
-                            (t) => `${t} rotateX(180deg)`,
-                        ),
+                        // transform: transform.interpolate(
+                        //     (t) => `${t} rotateX(180deg)`,
+                        // ),
                     }}
                 >
                     <Back onClose={handleClose}>{renderBack()}</Back>
