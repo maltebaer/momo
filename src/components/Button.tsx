@@ -11,13 +11,34 @@ const Button: React.FC<ButtonProps> = (props) => {
     const renderIcon = (): JSX.Element => {
         switch (props.id) {
             case "specs":
-                return <div className="icon card" />;
+                return (
+                    <div className="icon card flex justify-center items-center">
+                        <span className="transform -rotate-45 text-white text-xs sm:text-sm">
+                            Klick!
+                        </span>
+                    </div>
+                );
 
             case "parents":
-                return <div className="icon card triangle" />;
+                return (
+                    <div className="icon card octagon flex justify-center items-center">
+                        <span className="transform rotate-45 text-white text-xs sm:text-sm">
+                            Klick!
+                        </span>
+                    </div>
+                );
 
             case "time":
-                return <div className="icon card pentagon" />;
+                return (
+                    <div className="icon card pentagon flex justify-center items-center">
+                        <span
+                            style={{transform: "rotate(-135deg)"}}
+                            className="transform text-white text-xs sm:text-sm"
+                        >
+                            Klick!
+                        </span>
+                    </div>
+                );
 
             default:
                 return null;
