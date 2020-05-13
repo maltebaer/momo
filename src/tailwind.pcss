@@ -19,9 +19,7 @@ h3 {
 
 /* ICONS */
 .icon {
-    @apply h-12 w-12;
-    transform: scale(1);
-    animation: pulse 2s infinite;
+    @apply h-12 w-12 flex justify-center items-center bg-teal-600 card;
 }
 @screen sm {
     .icon {
@@ -41,9 +39,6 @@ h3 {
 }
 .pentagon {
     clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-}
-.rhombus {
-   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 .octagon {
     clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);

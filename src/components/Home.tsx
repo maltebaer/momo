@@ -1,5 +1,5 @@
 import * as React from "react";
-import {useSpring, animated as a} from "react-spring";
+import {motion, Variants, AnimatePresence} from "framer-motion";
 
 import Back from "./Back";
 import Front from "./Front";
@@ -15,12 +15,6 @@ export type BackContent = "parents" | "specs" | "time" | null;
 
 const Home: React.FC<HomeProps> = (props) => {
     const [back, setBack] = React.useState<BackContent>(null);
-
-    const {transform, opacity} = useSpring({
-        opacity: back ? 1 : 0,
-        transform: `perspective(600px) rotateX(${back ? 180 : 0}deg)`,
-        config: {mass: 4, tension: 180, friction: 30},
-    });
 
     const handleTurn = (content: BackContent): void => {
         setBack(content);
@@ -46,32 +40,41 @@ const Home: React.FC<HomeProps> = (props) => {
 
     return (
         <div className="w-full h-full flex justify-center items-center">
-            {!back && (
-                <a.div
-                    className="animated max-w-lg"
-                    style={{
-                        opacity: opacity.interpolate((o: number) => 1 - o),
-                        transform,
-                    }}
-                >
-                    <Front handleTurn={handleTurn} momo={props.momo} />
-                </a.div>
-            )}
-            {back && (
-                <a.div
-                    className="animated max-w-lg"
-                    style={{
-                        opacity,
-                        transform: transform.interpolate(
-                            (t) => `${t} rotateX(180deg)`,
-                        ),
-                    }}
-                >
-                    <Back onClose={handleClose}>{renderBack()}</Back>
-                </a.div>
-            )}
+            <AnimatePresence exitBeforeEnter>
+                {!back && (
+                    <motion.div
+                        key="front"
+                        className="max-w-lg"
+                        initial={{rotateX: 90, opacity: 0}}
+                        animate={{rotateX: 0, opacity: 1}}
+                        exit={{rotateX: 90, opacity: 0}}
+                    >
+                        <Front onHandleTurn={handleTurn} momo={props.momo} />
+                    </motion.div>
+                )}
+                {back && (
+                    <motion.div
+                        key="back"
+                        className="max-w-lg"
+                        initial={{rotateX: 90, opacity: 0}}
+                        animate={{rotateX: 0, opacity: 1}}
+                        exit={{rotateX: 90, opacity: 0}}
+                    >
+                        <Back onClose={handleClose}>{renderBack()}</Back>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
+};
+
+const variants: Variants = {
+    show: {
+        scale: 1,
+    },
+    exit: {
+        rotateX: 180,
+    },
 };
 
 export default Home;
