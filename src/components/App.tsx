@@ -12,14 +12,24 @@ const App: React.FC = () => {
     const audio = React.createRef<HTMLAudioElement>();
     const [showStorch, setShowStorch] = React.useState<boolean>(true);
 
-    React.useEffect(() => {
+    const setWindowHeight = (): void => {
         const vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty("--vh", `${vh}px`);
-    }, []);
+    };
     React.useEffect(() => {
+        // Avoid 100vh not respecting menu bar on mobile browsers
+        window.addEventListener("resize", setWindowHeight);
+        return (): void => {
+            window.removeEventListener("resize", setWindowHeight);
+        };
+    }, []);
+
+    React.useEffect(() => {
+        // Force browser to preload images
         const imgList = [momo, parents, time];
         imgList.forEach((image) => (new Image().src = image));
     }, []);
+
     React.useEffect(() => {
         setTimeout(() => {
             setShowStorch(false);
