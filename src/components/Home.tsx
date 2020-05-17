@@ -45,7 +45,7 @@ const Home: React.FC<HomeProps> = (props) => {
     };
 
     return (
-        <div className="w-full h-full flex justify-center items-center">
+        <article className="flex justify-center items-center">
             {!back && (
                 <animated.div
                     className="animated max-w-lg"
@@ -70,7 +70,7 @@ const Home: React.FC<HomeProps> = (props) => {
                     <Back onClose={handleClose}>{renderBack()}</Back>
                 </animated.div>
             )}
-        </div>
+        </article>
     );
 };
 

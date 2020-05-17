@@ -4,10 +4,7 @@
 /* purgecss end ignore */
 
 /* HEADINGS */
-h2 {
-    @apply text-shadow text-xl text-white font-bold;
-}
-h3 {
+.sub-heading {
     @apply text-xl font-bold text-gray-800;
 }
 .sub-text {
@@ -18,11 +15,11 @@ h3 {
 }
 
 /* ICONS */
-.icon {
-    @apply h-12 w-12 flex justify-center items-center card-border;
+.button {
+    @apply h-12 w-12 flex justify-center items-center shadow-md card-border;
 }
 @screen sm {
-    .icon {
+    .button {
         @apply h-16 w-16
     }
 }
@@ -48,7 +45,6 @@ h3 {
 
 /* HELPERS */
 .card-border {
-    @apply bg-teal-600;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
     border: solid 5px #285e61;
 }

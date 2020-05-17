@@ -17,7 +17,7 @@ const App: React.FC = () => {
         document.documentElement.style.setProperty("--vh", `${vh}px`);
     };
     React.useEffect(() => {
-        // Avoid 100vh not respecting menu bar on mobile browsers
+        // Avoid 100vh not respecting URL bar on mobile browsers
         window.addEventListener("resize", setWindowHeight);
         return (): void => {
             window.removeEventListener("resize", setWindowHeight);
@@ -42,16 +42,14 @@ const App: React.FC = () => {
     }, [audio]);
 
     return (
-        <main className="full-height w-screen overflow-hidden relative bg-blue-100">
-            <div className="px-6 h-full">
-                {showStorch ? (
-                    <Storch />
-                ) : (
-                    <div className="h-full flex justify-center items-center">
-                        <Home momo={momo} parents={parents} time={time} />
-                    </div>
-                )}
-            </div>
+        <main className="full-height w-screen px-6 relative overflow-hidden bg-blue-100">
+            {showStorch ? (
+                <Storch />
+            ) : (
+                <div className="h-full flex justify-center items-center">
+                    <Home momo={momo} parents={parents} time={time} />
+                </div>
+            )}
             <audio ref={audio} src={squeaking} hidden autoPlay />
         </main>
     );

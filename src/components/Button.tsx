@@ -13,7 +13,7 @@ const Button: React.FC<ButtonProps> = (props) => {
         switch (props.id) {
             case "specs":
                 return (
-                    <div className="icon bg-blue-400 border-blue-600">
+                    <div className="button bg-blue-400 border-blue-600">
                         <span className="transform -rotate-45 text-white text-xs sm:text-sm">
                             Klick!
                         </span>
@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
             case "parents":
                 return (
-                    <div className="icon octagon bg-indigo-600 border-indigo-800">
+                    <div className="button octagon bg-indigo-600 border-indigo-800">
                         <span className="transform rotate-45 text-white text-xs sm:text-sm">
                             Klick!
                         </span>
@@ -31,7 +31,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
             case "time":
                 return (
-                    <div className="icon pentagon bg-purple-500 border-purple-700">
+                    <div className="button pentagon bg-purple-500 border-purple-700">
                         <span
                             style={{transform: "rotate(-135deg)"}}
                             className="transform text-white text-xs sm:text-sm"

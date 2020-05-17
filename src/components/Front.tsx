@@ -22,7 +22,7 @@ const Front: React.FC<FrontProps> = (props) => {
             <div className="px-4">
                 <div className="card-border">
                     <img
-                        className="rounded-sm overflow-hidden"
+                        className="rounded-sm overflow-hidden shadow-xl"
                         src={props.momo}
                         alt="Momo"
                     />
@@ -43,8 +43,10 @@ export default Front;
 
 const Name: React.FC = () => {
     return (
-        <div className="card-border p-2 bg-teal-600">
-            <h2>Hugo Rakete Bär</h2>
+        <div className="card-border py-2 px-4 bg-teal-600">
+            <h2 className="text-shadow text-xl text-white font-bold">
+                Hugo Rakete
+            </h2>
             <div className="text-gray-800 font-semibold text-right">
                 4. Juni 2020
             </div>

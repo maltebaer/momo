@@ -14,7 +14,9 @@ const Back: React.FC<BackProps> = (props) => {
                     <div className="w-5 h-5 close bg-blue-100" />
                 </button>
             </div>
-            <div className="rounded-sm overflow-hidden">{props.children}</div>
+            <div className="rounded-sm overflow-hidden shadow-xl">
+                {props.children}
+            </div>
         </div>
     );
 };
