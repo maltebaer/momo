@@ -14,7 +14,7 @@ interface HomeProps {
 export type BackContent = "parents" | "specs" | "time" | null;
 
 const Home: React.FC<HomeProps> = (props) => {
-    const [back, setBack] = React.useState<BackContent>("specs");
+    const [back, setBack] = React.useState<BackContent>(null);
 
     const {transform, opacity} = useSpring({
         opacity: back ? 1 : 0,
