@@ -42,7 +42,7 @@ const App: React.FC = () => {
     }, [audio]);
 
     return (
-        <div className="full-height bg-blue-100 overflow-hidden">
+        <main className="full-height w-screen overflow-hidden relative bg-blue-100">
             <div className="px-6 h-full">
                 {showStorch ? (
                     <Storch />
@@ -53,7 +53,7 @@ const App: React.FC = () => {
                 )}
             </div>
             <audio ref={audio} src={squeaking} hidden autoPlay />
-        </div>
+        </main>
     );
 };
 

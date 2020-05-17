@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import {useSpring, animated as a} from "react-spring";
+import {useSpring, animated} from "react-spring";
 
 import clouds from "../assets/clouds.svg";
 import storch from "../assets/storch.gif";
@@ -17,9 +17,9 @@ const Storch: React.FC = () => {
         config: {mass: 2, tension: 1, friction: 15},
     });
     const {x: xStorch} = useSpring({
-        x: 40,
-        from: {x: 110},
-        config: {mass: 1, tension: 2, friction: 5},
+        x: 0,
+        from: {x: 80},
+        config: {mass: 4, tension: 2, friction: 5},
     });
     const {y: yStorch} = useSpring({
         y: -2,
@@ -29,112 +29,91 @@ const Storch: React.FC = () => {
 
     return (
         <React.Fragment>
-            <a.div
+            <animated.img
                 style={{
-                    position: "absolute",
-                    top: "1vh",
+                    minWidth: "15vh",
+                    top: 0,
                     opacity: opacityClouds,
                     transform: xClouds.interpolate(
                         (x) => `translateX(${-10 + 0.6 * x}vw)`,
                     ),
                 }}
-            >
-                <img
-                    style={{minWidth: "15vh"}}
-                    className="h-32 w-32"
-                    src={clouds}
-                    alt="Wolken"
-                />
-            </a.div>
-            <a.div
+                className="absolute h-32 w-32"
+                src={clouds}
+                alt="Wolken"
+            />
+            <animated.img
                 style={{
-                    position: "absolute",
+                    minWidth: "10vh",
                     top: "15vh",
                     opacity: opacityClouds,
                     transform: xClouds.interpolate(
                         (x) => `translateX(${60 + 0.4 * x}vw)`,
                     ),
                 }}
-            >
-                <img
-                    style={{minWidth: "10vh"}}
-                    className="h-20 w-20"
-                    src={clouds}
-                    alt="Wolken"
-                />
-            </a.div>
-            <a.div
+                className="absolute h-20 w-20"
+                src={clouds}
+                alt="Wolken"
+            />
+            <animated.img
                 style={{
-                    position: "absolute",
-                    top: "20vh",
+                    minWidth: "15vh",
+                    top: "18vh",
                     opacity: opacityClouds,
                     transform: xClouds.interpolate(
                         (x) => `translateX(${0.8 * x}vw)`,
                     ),
                 }}
-            >
-                <img
-                    style={{minWidth: "20vh"}}
-                    className="h-48 w-48"
-                    src={clouds}
-                    alt="Wolken"
-                />
-            </a.div>
-            <a.div
+                className="absolute h-48 w-48"
+                src={clouds}
+                alt="Wolken"
+            />
+            <animated.img
                 style={{
-                    position: "absolute",
+                    minWidth: "10vh",
                     bottom: "30vh",
                     opacity: opacityClouds,
                     transform: xClouds.interpolate(
                         (x) => `translateX(${-30 + 0.4 * x}vw)`,
                     ),
                 }}
-            >
-                <img
-                    style={{minWidth: "10vh"}}
-                    className="h-20 w-20"
-                    src={clouds}
-                    alt="Wolken"
-                />
-            </a.div>
-            <a.div
+                className="absolute h-20 w-20"
+                src={clouds}
+                alt="Wolken"
+            />
+            <animated.img
                 style={{
-                    position: "absolute",
-                    bottom: "1vh",
+                    minWidth: "30vh",
+                    bottom: 0,
                     opacity: opacityClouds,
                     transform: xClouds.interpolate(
                         (x) => `translateX(${10 + x}vw)`,
                     ),
                 }}
-            >
-                <img
-                    style={{minWidth: "30vh"}}
-                    className="h-64 w-64"
-                    src={clouds}
-                    alt="Wolken"
-                />
-            </a.div>
-            <a.div
+                className="absolute h-64 w-64"
+                src={clouds}
+                alt="Wolken"
+            />
+            <animated.div
                 style={{
-                    position: "absolute",
-                    top: "40vh",
-                    transform: xStorch.interpolate((x) => `translateX(${x}vw)`),
+                    minWidth: "40vh",
+                    maxWidth: "50vh",
+                    margin: "0 auto",
+                    transform: xStorch.interpolate(
+                        (x) => `translate(${x}vw, 32vh)`,
+                    ),
                 }}
             >
-                <a.div
+                <animated.img
                     style={{
                         transform: yStorch.interpolate(
                             (y) => `translateY(${y}vh)`,
                         ),
                     }}
-                >
-                    <img
-                        style={{minWidth: "40vh"}}
-                        src={storch}
-                        alt="Storch Hugo"
-                    />
-                </a.div>
-            </a.div>
+                    src={storch}
+                    alt="Storch Hugo"
+                />
+            </animated.div>
         </React.Fragment>
     );
 };

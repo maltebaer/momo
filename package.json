@@ -12,9 +12,9 @@
         "gh-deploy": "gh-pages -d dist"
     },
     "dependencies": {
-        "framer-motion": "^1.10.3",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1",
+        "framer-motion": "^1.11.0",
+        "react": "^16.8",
+        "react-dom": "^16.8",
         "react-spring": "^8.0.27"
     },
     "devDependencies": {
