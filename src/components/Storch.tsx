@@ -18,8 +18,8 @@ const Storch: React.FC = () => {
     });
     const {x: xStorch} = useSpring({
         x: 0,
-        from: {x: 80},
-        config: {mass: 4, tension: 2, friction: 5},
+        from: {x: 90},
+        config: {mass: 5, tension: 2, friction: 8},
     });
     const {y: yStorch} = useSpring({
         y: -2,

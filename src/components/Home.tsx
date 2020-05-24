@@ -37,7 +37,9 @@ const Home: React.FC<HomeProps> = (props) => {
             case "parents":
                 return <img src={props.parents} alt="Steffi und Malte" />;
             case "time":
-                return <img src={props.time} alt="Pow" />;
+                return (
+                    <img className="bg-blue-200" src={props.time} alt="Pow" />
+                );
 
             default:
                 return null;

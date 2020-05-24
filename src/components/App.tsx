@@ -6,7 +6,7 @@ import Storch from "./Storch";
 import squeaking from "../assets/squeaking.mp3";
 import momo from "../assets/momo.jpg";
 import parents from "../assets/parents.jpg";
-import time from "../assets/time.jpg";
+import time from "../assets/time.gif";
 
 const App: React.FC = () => {
     const audio = React.createRef<HTMLAudioElement>();
