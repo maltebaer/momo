@@ -45,10 +45,10 @@ const Name: React.FC = () => {
     return (
         <div className="card-border py-2 px-4 bg-teal-600">
             <h2 className="text-shadow text-xl text-white font-bold">
-                Hugo Rakete
+                Michel Lovis
             </h2>
             <div className="text-gray-800 font-semibold text-right">
-                4. Juni 2020
+                1. Juni 2020
             </div>
         </div>
     );
